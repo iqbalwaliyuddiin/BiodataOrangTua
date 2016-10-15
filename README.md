@@ -7,7 +7,7 @@ yang terakhir yaitu memilih pekerjaan orang tua
 * Nama : M. Iqbal Waliyuddin
 * No : 29
 * Kelas : XII RPL 2
-* NIS : 4344/1242.063
+* NIS : 4385/1283.063
 * Sekolah : SMK Telkom Malang
 
 # File Screenshot
