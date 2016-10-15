@@ -25,7 +25,46 @@ public class MainActivity extends AppCompatActivity {
         tvHasil = (TextView) findViewById(R.id.tvHasil);
         rgStatus = (RadioGroup) findViewById(R.id.rgStatus);
 
+        btOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goHasil();
+            }
+        });
 
+    }
 
+    private void goHasil() {
+        if (isValid()) {
+        String nama = etNama.getText().toString();
+
+            String hasil = null;
+            if (rgStatus.getCheckedRadioButtonId()!=-1)
+            {
+                RadioButton rb = (RadioButton)
+                        findViewById(rgStatus.getCheckedRadioButtonId());
+                hasil = rb.getText().toString();
+            }
+            if (hasil == null)
+            {
+                tvHasil.setText("Belum memilih");
+            }
+        tvHasil.setText("Orang Tua yang bernama " + nama + " Berpenghasilan : \n" + hasil);
+    }
+}
+
+    private boolean isValid() {
+        boolean valid = true;
+
+        String nama = etNama.getText().toString();
+
+        if (nama.isEmpty()){
+            etNama.setError("kolom belum diisi");
+            valid = false;
+        }
+        else {
+            etNama.setError(null);
+        }
+        return valid;
     }
 }
