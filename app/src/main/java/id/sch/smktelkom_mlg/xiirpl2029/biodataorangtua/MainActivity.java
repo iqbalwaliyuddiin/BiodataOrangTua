@@ -8,6 +8,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvHasil;
     RadioGroup rgStatus;
     CheckBox pns, w, pt;
+    Spinner spOrtu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         pns = (CheckBox) findViewById(R.id.checkBoxPNS);
         w = (CheckBox) findViewById(R.id.checkBoxW);
         pt = (CheckBox) findViewById(R.id.checkBoxPT);
+        spOrtu = (Spinner) findViewById(R.id.spinnerOrtu);
 
         btOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
             if(pt.isChecked()) hsl+=pt.getText()+"\n";
 
             if(hsl.length()==startlen) hsl+="Tidak ada masukan";
-        tvHasil.setText("Orang Tua yang bernama " + nama + " Berpenghasilan : \n" + hasil +
+
+
+        tvHasil.setText(spOrtu.getSelectedItem().toString() + " yang bernama " + nama + " berpenghasilan : \n" + hasil +
                 " \nBerprofesi sebagai : " + hsl);
     }
 }
