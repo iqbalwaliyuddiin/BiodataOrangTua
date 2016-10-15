@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button btOk;
     TextView tvHasil;
     RadioGroup rgStatus;
+    CheckBox pns, w, pt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         btOk = (Button) findViewById(R.id.button);
         tvHasil = (TextView) findViewById(R.id.tvHasil);
         rgStatus = (RadioGroup) findViewById(R.id.rgStatus);
+        pns = (CheckBox) findViewById(R.id.checkBoxPNS);
+        w = (CheckBox) findViewById(R.id.checkBoxW);
+        pt = (CheckBox) findViewById(R.id.checkBoxPT);
 
         btOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +54,16 @@ public class MainActivity extends AppCompatActivity {
             {
                 tvHasil.setText("Belum memilih");
             }
-        tvHasil.setText("Orang Tua yang bernama " + nama + " Berpenghasilan : \n" + hasil);
+
+            String hsl = "\n";
+            int startlen = hsl.length();
+            if(pns.isChecked()) hsl+=pns.getText()+"\n";
+            if(w.isChecked()) hsl+=w.getText()+"\n";
+            if(pt.isChecked()) hsl+=pt.getText()+"\n";
+
+            if(hsl.length()==startlen) hsl+="Tidak ada masukan";
+        tvHasil.setText("Orang Tua yang bernama " + nama + " Berpenghasilan : \n" + hasil +
+                " \nBerprofesi sebagai : " + hsl);
     }
 }
 
