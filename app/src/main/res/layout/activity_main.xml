@@ -1,17 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="id.sch.smktelkom_mlg.xiirpl2029.biodataorangtua.MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/logo"
+        android:id="@+id/imageView" />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:text="Orang Tua"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        android:id="@+id/textView" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/ortu"
+        android:id="@+id/spinnerOrtu" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Nama"
+            android:ems="10"
+            android:id="@+id/editTextNama"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <TextView
+        android:text="Penghasilan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rgStatus">
+
+        <RadioButton
+            android:text="Rp 1.000.000 - Rp 2.500.000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonPR"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:text="Rp 2.500.000 - Rp 5.000.000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonPS"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioButtonPT"
+            android:layout_weight="1"
+            android:text="> Rp 5.000.000" />
+
+    </RadioGroup>
+
+    <TextView
+        android:text="Pekerjaan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/penghasilanTV" />
+
+    <CheckBox
+        android:text="PNS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxPNS" />
+
+    <CheckBox
+        android:text="Wiraswasta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxW" />
+
+    <CheckBox
+        android:text="Pengusaha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxPT" />
+
+    <Button
+        android:text="Hasil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Hasil"
+        android:id="@+id/tvHasil"/>
+</LinearLayout>
+</ScrollView>
